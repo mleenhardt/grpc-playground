@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Playground.Common.ServiceDefinition";
+
+message Person {
+	int32 id = 1;
+	string name = 2;
+}
+
+message PersonId {
+	int32 id = 1;
+}
+
+message PersonListRequest {}
+
+message PersonListResponse {
+	repeated Person people = 1;
+}
+
+message ListenForNewPeopleRequest {}
+
+service PlayGroundService {
+	rpc GetPersonById(PersonId) returns (Person) {}
+	rpc GetPersonList(PersonListRequest) returns (stream Person) {}
+	rpc CreatePeople(stream Person) returns (PersonListResponse) {}
+	rpc ListenForNewPeople(ListenForNewPeopleRequest) returns (stream Person) {}
+}
