@@ -19,7 +19,7 @@ message PersonListResponse {
 
 message ListenForNewPeopleRequest {}
 
-service PlayGroundService {
+service PlaygroundService {
 	rpc GetPersonById(PersonId) returns (Person) {}
 	rpc GetPersonList(PersonListRequest) returns (stream Person) {}
 	rpc CreatePeople(stream Person) returns (PersonListResponse) {}

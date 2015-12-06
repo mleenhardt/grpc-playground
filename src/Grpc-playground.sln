@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{451879
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Common", "Playground.Common\Playground.Common.csproj", "{36216D3D-2CEF-40CE-8B91-A97B8ED8A726}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Server", "Playground.Server\Playground.Server.csproj", "{309633BC-B832-4849-8386-73A83A995E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Client", "Playground.Client\Playground.Client.csproj", "{9CF94760-B876-4A3B-A317-0B00D3667B7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{36216D3D-2CEF-40CE-8B91-A97B8ED8A726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36216D3D-2CEF-40CE-8B91-A97B8ED8A726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36216D3D-2CEF-40CE-8B91-A97B8ED8A726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309633BC-B832-4849-8386-73A83A995E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309633BC-B832-4849-8386-73A83A995E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309633BC-B832-4849-8386-73A83A995E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309633BC-B832-4849-8386-73A83A995E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

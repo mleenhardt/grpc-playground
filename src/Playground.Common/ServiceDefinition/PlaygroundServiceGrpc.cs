@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Grpc.Core;
 
 namespace Playground.Common.ServiceDefinition {
-  public static class PlayGroundService
+  public static class PlaygroundService
   {
-    static readonly string __ServiceName = "PlayGroundService";
+    static readonly string __ServiceName = "PlaygroundService";
 
     static readonly Marshaller<global::Playground.Common.ServiceDefinition.PersonId> __Marshaller_PersonId = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Playground.Common.ServiceDefinition.PersonId.Parser.ParseFrom);
     static readonly Marshaller<global::Playground.Common.ServiceDefinition.Person> __Marshaller_Person = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Playground.Common.ServiceDefinition.Person.Parser.ParseFrom);
@@ -49,11 +49,11 @@ namespace Playground.Common.ServiceDefinition {
     // service descriptor
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Playground.Common.ServiceDefinition.PlaygroundService.Descriptor.Services[0]; }
+      get { return global::Playground.Common.ServiceDefinition.Proto.PlaygroundService.Descriptor.Services[0]; }
     }
 
     // client interface
-    public interface IPlayGroundServiceClient
+    public interface IPlaygroundServiceClient
     {
       global::Playground.Common.ServiceDefinition.Person GetPersonById(global::Playground.Common.ServiceDefinition.PersonId request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken));
       global::Playground.Common.ServiceDefinition.Person GetPersonById(global::Playground.Common.ServiceDefinition.PersonId request, CallOptions options);
@@ -68,7 +68,7 @@ namespace Playground.Common.ServiceDefinition {
     }
 
     // server-side interface
-    public interface IPlayGroundService
+    public interface IPlaygroundService
     {
       Task<global::Playground.Common.ServiceDefinition.Person> GetPersonById(global::Playground.Common.ServiceDefinition.PersonId request, ServerCallContext context);
       Task GetPersonList(global::Playground.Common.ServiceDefinition.PersonListRequest request, IServerStreamWriter<global::Playground.Common.ServiceDefinition.Person> responseStream, ServerCallContext context);
@@ -77,9 +77,9 @@ namespace Playground.Common.ServiceDefinition {
     }
 
     // client stub
-    public class PlayGroundServiceClient : ClientBase, IPlayGroundServiceClient
+    public class PlaygroundServiceClient : ClientBase, IPlaygroundServiceClient
     {
-      public PlayGroundServiceClient(Channel channel) : base(channel)
+      public PlaygroundServiceClient(Channel channel) : base(channel)
       {
       }
       public global::Playground.Common.ServiceDefinition.Person GetPersonById(global::Playground.Common.ServiceDefinition.PersonId request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
@@ -135,7 +135,7 @@ namespace Playground.Common.ServiceDefinition {
     }
 
     // creates service definition that can be registered with a server
-    public static ServerServiceDefinition BindService(IPlayGroundService serviceImpl)
+    public static ServerServiceDefinition BindService(IPlaygroundService serviceImpl)
     {
       return ServerServiceDefinition.CreateBuilder(__ServiceName)
           .AddMethod(__Method_GetPersonById, serviceImpl.GetPersonById)
@@ -145,9 +145,9 @@ namespace Playground.Common.ServiceDefinition {
     }
 
     // creates a new client
-    public static PlayGroundServiceClient NewClient(Channel channel)
+    public static PlaygroundServiceClient NewClient(Channel channel)
     {
-      return new PlayGroundServiceClient(channel);
+      return new PlaygroundServiceClient(channel);
     }
 
   }

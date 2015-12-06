@@ -9,41 +9,44 @@ using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
 namespace Playground.Common.ServiceDefinition {
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public static partial class PlaygroundService {
+  namespace Proto {
 
-    #region Descriptor
-    public static pbr::FileDescriptor Descriptor {
-      get { return descriptor; }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public static partial class PlaygroundService {
+
+      #region Descriptor
+      public static pbr::FileDescriptor Descriptor {
+        get { return descriptor; }
+      }
+      private static pbr::FileDescriptor descriptor;
+
+      static PlaygroundService() {
+        byte[] descriptorData = global::System.Convert.FromBase64String(
+            string.Concat(
+              "ChhwbGF5Z3JvdW5kX3NlcnZpY2UucHJvdG8iIgoGUGVyc29uEgoKAmlkGAEg", 
+              "ASgFEgwKBG5hbWUYAiABKAkiFgoIUGVyc29uSWQSCgoCaWQYASABKAUiEwoR", 
+              "UGVyc29uTGlzdFJlcXVlc3QiLQoSUGVyc29uTGlzdFJlc3BvbnNlEhcKBnBl", 
+              "b3BsZRgBIAMoCzIHLlBlcnNvbiIbChlMaXN0ZW5Gb3JOZXdQZW9wbGVSZXF1", 
+              "ZXN0Mt0BChFQbGF5Z3JvdW5kU2VydmljZRIlCg1HZXRQZXJzb25CeUlkEgku", 
+              "UGVyc29uSWQaBy5QZXJzb24iABIwCg1HZXRQZXJzb25MaXN0EhIuUGVyc29u", 
+              "TGlzdFJlcXVlc3QaBy5QZXJzb24iADABEjAKDENyZWF0ZVBlb3BsZRIHLlBl", 
+              "cnNvbhoTLlBlcnNvbkxpc3RSZXNwb25zZSIAKAESPQoSTGlzdGVuRm9yTmV3", 
+              "UGVvcGxlEhouTGlzdGVuRm9yTmV3UGVvcGxlUmVxdWVzdBoHLlBlcnNvbiIA", 
+              "MAFCJqoCI1BsYXlncm91bmQuQ29tbW9uLlNlcnZpY2VEZWZpbml0aW9uYgZw", 
+              "cm90bzM="));
+        descriptor = pbr::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
+            new pbr::FileDescriptor[] { },
+            new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
+              new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.Person), new[]{ "Id", "Name" }, null, null, null),
+              new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.PersonId), new[]{ "Id" }, null, null, null),
+              new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.PersonListRequest), null, null, null, null),
+              new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.PersonListResponse), new[]{ "People" }, null, null, null),
+              new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.ListenForNewPeopleRequest), null, null, null, null)
+            }));
+      }
+      #endregion
+
     }
-    private static pbr::FileDescriptor descriptor;
-
-    static PlaygroundService() {
-      byte[] descriptorData = global::System.Convert.FromBase64String(
-          string.Concat(
-            "ChhwbGF5Z3JvdW5kX3NlcnZpY2UucHJvdG8iIgoGUGVyc29uEgoKAmlkGAEg", 
-            "ASgFEgwKBG5hbWUYAiABKAkiFgoIUGVyc29uSWQSCgoCaWQYASABKAUiEwoR", 
-            "UGVyc29uTGlzdFJlcXVlc3QiLQoSUGVyc29uTGlzdFJlc3BvbnNlEhcKBnBl", 
-            "b3BsZRgBIAMoCzIHLlBlcnNvbiIbChlMaXN0ZW5Gb3JOZXdQZW9wbGVSZXF1", 
-            "ZXN0Mt0BChFQbGF5R3JvdW5kU2VydmljZRIlCg1HZXRQZXJzb25CeUlkEgku", 
-            "UGVyc29uSWQaBy5QZXJzb24iABIwCg1HZXRQZXJzb25MaXN0EhIuUGVyc29u", 
-            "TGlzdFJlcXVlc3QaBy5QZXJzb24iADABEjAKDENyZWF0ZVBlb3BsZRIHLlBl", 
-            "cnNvbhoTLlBlcnNvbkxpc3RSZXNwb25zZSIAKAESPQoSTGlzdGVuRm9yTmV3", 
-            "UGVvcGxlEhouTGlzdGVuRm9yTmV3UGVvcGxlUmVxdWVzdBoHLlBlcnNvbiIA", 
-            "MAFCJqoCI1BsYXlncm91bmQuQ29tbW9uLlNlcnZpY2VEZWZpbml0aW9uYgZw", 
-            "cm90bzM="));
-      descriptor = pbr::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.Person), new[]{ "Id", "Name" }, null, null, null),
-            new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.PersonId), new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.PersonListRequest), null, null, null, null),
-            new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.PersonListResponse), new[]{ "People" }, null, null, null),
-            new pbr::GeneratedCodeInfo(typeof(global::Playground.Common.ServiceDefinition.ListenForNewPeopleRequest), null, null, null, null)
-          }));
-    }
-    #endregion
-
   }
   #region Messages
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -52,7 +55,7 @@ namespace Playground.Common.ServiceDefinition {
     public static pb::MessageParser<Person> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Playground.Common.ServiceDefinition.PlaygroundService.Descriptor.MessageTypes[0]; }
+      get { return global::Playground.Common.ServiceDefinition.Proto.PlaygroundService.Descriptor.MessageTypes[0]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -180,7 +183,7 @@ namespace Playground.Common.ServiceDefinition {
     public static pb::MessageParser<PersonId> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Playground.Common.ServiceDefinition.PlaygroundService.Descriptor.MessageTypes[1]; }
+      get { return global::Playground.Common.ServiceDefinition.Proto.PlaygroundService.Descriptor.MessageTypes[1]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -282,7 +285,7 @@ namespace Playground.Common.ServiceDefinition {
     public static pb::MessageParser<PersonListRequest> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Playground.Common.ServiceDefinition.PlaygroundService.Descriptor.MessageTypes[2]; }
+      get { return global::Playground.Common.ServiceDefinition.Proto.PlaygroundService.Descriptor.MessageTypes[2]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -358,7 +361,7 @@ namespace Playground.Common.ServiceDefinition {
     public static pb::MessageParser<PersonListResponse> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Playground.Common.ServiceDefinition.PlaygroundService.Descriptor.MessageTypes[3]; }
+      get { return global::Playground.Common.ServiceDefinition.Proto.PlaygroundService.Descriptor.MessageTypes[3]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -452,7 +455,7 @@ namespace Playground.Common.ServiceDefinition {
     public static pb::MessageParser<ListenForNewPeopleRequest> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Playground.Common.ServiceDefinition.PlaygroundService.Descriptor.MessageTypes[4]; }
+      get { return global::Playground.Common.ServiceDefinition.Proto.PlaygroundService.Descriptor.MessageTypes[4]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
