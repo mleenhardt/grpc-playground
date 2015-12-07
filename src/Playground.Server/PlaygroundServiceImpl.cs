@@ -9,7 +9,7 @@ namespace Playground.Server
     public class PlaygroundServiceImpl : PlaygroundService.IPlaygroundService
     {
         private readonly PersonRepository _personRepository;
-        private readonly ManualResetEventSlim _autoResetEvent = new ManualResetEventSlim(false);
+        private readonly ManualResetEventSlim _manualResetEvent = new ManualResetEventSlim(false);
         
         public PlaygroundServiceImpl(PersonRepository personRepository)
         {
@@ -52,17 +52,14 @@ namespace Playground.Server
         public Task ListenForNewPeople(ListenForNewPeopleRequest request, IServerStreamWriter<Person> responseStream, ServerCallContext context)
         {
             LogRpc(context);
-            _personRepository.PersonCreated += async (sender, arg) =>
-            {
-                await responseStream.WriteAsync(arg.Person);
-            };
-            _autoResetEvent.Wait();
+            _personRepository.PersonCreated += (sender, arg) => responseStream.WriteAsync(arg.Person);
+            _manualResetEvent.Wait();
             return Task.FromResult(0);
         }
 
         public void Shutdown()
         {
-            _autoResetEvent.Set();
+            _manualResetEvent.Set();
         }
     }
 }
