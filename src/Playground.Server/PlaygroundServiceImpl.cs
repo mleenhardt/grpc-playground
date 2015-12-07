@@ -52,7 +52,7 @@ namespace Playground.Server
         public Task ListenForNewPeople(ListenForNewPeopleRequest request, IServerStreamWriter<Person> responseStream, ServerCallContext context)
         {
             LogRpc(context);
-            _personRepository.PersonCreated += (sender, arg) => responseStream.WriteAsync(arg.Person);
+            _personRepository.PersonCreated += async (sender, arg) => await responseStream.WriteAsync(arg.Person);
             _manualResetEvent.Wait();
             return Task.FromResult(0);
         }
