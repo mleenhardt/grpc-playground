@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Grpc.Core;
 using Playground.Common.ServiceDefinition;
 
@@ -9,12 +10,21 @@ namespace Playground.Server
         static void Main(string[] args)
         {
             const int port = 1337;
-            
+
             var serviceImpl = new PlaygroundServiceImpl(new PersonRepository());
             var server = new Grpc.Core.Server
             {
                 Services = { PlaygroundService.BindService(serviceImpl) },
-                Ports = { new ServerPort("localhost", port, ServerCredentials.Insecure) }
+                Ports =
+                {
+                    new ServerPort("0.0.0.0", port, new SslServerCredentials(
+                        new[]
+                        {
+                            new KeyCertificatePair(
+                                File.ReadAllText("certificates\\server.crt"),
+                                File.ReadAllText("certificates\\server.key"))
+                        }))
+                }
             };
             server.Start();
 

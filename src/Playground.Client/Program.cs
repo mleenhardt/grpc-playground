@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
 using Grpc.Core;
 using Playground.Common.ServiceDefinition;
 
@@ -12,7 +9,7 @@ namespace Playground.Client
     {
         static void Main(string[] args)
         {
-            var channel = new Channel("localhost:1337", Credentials.Insecure);
+            var channel = new Channel("localhost", 1337, new SslCredentials(File.ReadAllText("certificates\\ca.crt")));
             var client = new ServiceClient(PlaygroundService.NewClient(channel));
 
             var listenTask = client.ListenForNewPeopleAsync();
