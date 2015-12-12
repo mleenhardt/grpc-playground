@@ -44,7 +44,7 @@ namespace Playground.Auth.ActiveDirectory
             return ValidateLdapCredentials(userName, password, domain);
         }
 
-        public static bool ValidateLdapCredentials(string userName, string password, string domain)
+        private static bool ValidateLdapCredentials(string userName, string password, string domain)
         {
             LdapDirectoryIdentifier directoryIdentifier = new LdapDirectoryIdentifier(domain);
             var credentials = new NetworkCredential(userName, password, domain);
