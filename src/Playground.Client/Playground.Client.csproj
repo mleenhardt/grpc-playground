@@ -16,7 +16,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>113589ff</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>504b3393</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,12 +41,14 @@
     <Reference Include="Google.Protobuf">
       <HintPath>..\packages\Google.Protobuf.3.0.0-alpha4\lib\portable-net45+netcore45+wpa81+wp8\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="Grpc.Core">
+    <Reference Include="Grpc.Core, Version=0.7.1.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Grpc.Core.0.7.1\lib\net45\Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Interactive.Async">
+    <Reference Include="System.Interactive.Async, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ix-Async.1.2.3\lib\net45\System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
