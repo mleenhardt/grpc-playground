@@ -17,6 +17,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Server", "Playgr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Client", "Playground.Client\Playground.Client.csproj", "{9CF94760-B876-4A3B-A317-0B00D3667B7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Auth", "Playground.Auth\Playground.Auth.csproj", "{559B6DBA-D69D-4507-B8B1-FA93407391F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{421D427E-1095-4DBF-B55D-4AF84B194D39}"
+	ProjectSection(SolutionItems) = preProject
+		..\lib\Grpc.Core.dll = ..\lib\Grpc.Core.dll
+		..\lib\grpc_csharp_ext.dll = ..\lib\grpc_csharp_ext.dll
+		..\lib\libeay32.dll = ..\lib\libeay32.dll
+		..\lib\ssleay32.dll = ..\lib\ssleay32.dll
+		..\lib\System.Interactive.Async.dll = ..\lib\System.Interactive.Async.dll
+		..\lib\zlib.dll = ..\lib\zlib.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +47,10 @@ Global
 		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CF94760-B876-4A3B-A317-0B00D3667B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559B6DBA-D69D-4507-B8B1-FA93407391F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559B6DBA-D69D-4507-B8B1-FA93407391F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559B6DBA-D69D-4507-B8B1-FA93407391F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559B6DBA-D69D-4507-B8B1-FA93407391F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
